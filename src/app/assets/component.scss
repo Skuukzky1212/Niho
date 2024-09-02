@@ -1,0 +1,62 @@
+@import "../assets/util/media-queries.scss";
+@import "../assets/util/mixin.scss";
+
+.breadcrumb {
+  position: relative;
+  z-index: 2;
+  @include flexbox;
+  @include align-items(center);
+  padding: 11px 20px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 1366px;
+  margin: auto;
+  // scrollbar-width: none; /* Firefox */
+  // -ms-overflow-style: none; /* Internet Explorer 10+ */
+  // &::-webkit-scrollbar {
+  //   /* WebKit */
+  //   width: 0;
+  //   height: 0;
+  // }
+  @include SP {
+    padding: 3px 11px 0;
+  }
+
+  li {
+    position: relative;
+    @include font(12, 30, 50, 500);
+
+    &:not(:last-child) {
+      padding-right: 20px;
+      margin-right: 14px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 2px;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 5px;
+        height: 8px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.387 7.359"><g id="Group_176157" data-name="Group 176157" transform="translate(-259.647 -1020.631)"><g id="Group_176156" data-name="Group 176156"><g id="Group_176155" data-name="Group 176155"><path id="Path_95834" data-name="Path 95834" d="M-8155.537-15308.016l3.326,3.326-3.326,3.326" transform="translate(8415.537 16329)" fill="none" stroke="%233c3c3c" stroke-width="1"/></g></g></g></svg>')
+          center no-repeat;
+      }
+    }
+    &:last-child {
+      pointer-events: none;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: #3c3c3c;
+      @include HOVER {
+        text-decoration: unset;
+      }
+    }
+  }
+}
