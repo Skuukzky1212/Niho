@@ -298,18 +298,6 @@ a:active {
 /*-----------------------------------------------------------
 FONT family
 ------------------------------------------------------------*/
-.ffN {
-  @include ffN;
-}
-.ffM {
-  @include ffM;
-}
-.ffYG {
-  @include ffYG;
-}
-.ffYM {
-  @include ffYM;
-}
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -354,7 +342,6 @@ html.is-ipad * {
   @include add_prefix(text-size-adjust, none);
 }
 body {
-  @include ffN;
   @include font(16px, 1.6);
   word-break: break-word;
   color: $color_body;

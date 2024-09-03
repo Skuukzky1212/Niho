@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
-import "./assets/util/mixin.scss";
-import "./assets/util/media-queries.scss";
-import "./assets/util/base.scss";
-import "./assets/component.scss";
+import "./assets/css/util/mixin.scss";
+import "./assets/css/util/media-queries.scss";
+import "./assets/css/util/base.scss";
+import "./assets/css/component.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

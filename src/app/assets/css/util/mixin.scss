@@ -13,33 +13,6 @@ $font_smooth: true;
   #{$key}: $value;
 }
 
-$hiraGothic: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
-  "ヒラギノ角ゴ Pro W3", "ヒラギノ角ゴ W3", "メイリオ", "Osaka",
-  "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-$hiraMincho: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E",
-  "ＭＳ Ｐ明朝", serif;
-$yugothic: "游ゴシック体", "游ゴシック", "YuGothic", "Yu Gothic", "Noto Sans JP",
-  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
-  "MS Pゴシック", "MS PGothic", sans-serif;
-$yumincho: "游明朝体", "游明朝", "YuMincho", "Yu Mincho", "Noto Serif JP",
-  "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-$cri: "Crimson Text", serif;
-$noto: "Noto Sans JP", sans-serif;
-$noto-sef: "Noto Serif JP", serif;
-/* font style */
-@mixin ffN {
-  font-family: $noto;
-}
-@mixin ffM {
-  font-family: $hiraMincho;
-}
-@mixin ffYG {
-  font-family: $yugothic;
-}
-@mixin ffYM {
-  font-family: $yumincho;
-}
-
 @mixin font-smooth() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -96,7 +69,7 @@ $noto-sef: "Noto Serif JP", serif;
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
-  > .content {
+  > .content-ratio {
     position: absolute;
     top: 0;
     left: 0;
