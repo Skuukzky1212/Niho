@@ -3,20 +3,20 @@ import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
 import { formatMyDate } from "../assets/js/utils";
 
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const BlogContent = ({ content }) => {
   const sgTitle = content?.attributes?.title;
-  const sgTimestamp = content?.attributes?.createdAt;
+  const sgTimestamp = content?.attributes?.updatedAt;
   const sgTerm = content?.attributes?.information_categories?.data;
   const sgCmsContent = content?.attributes?.content;
   const strapi_url = process?.env?.API_STRAPI_URL;
   const sgThumb = content?.attributes?.thumb?.data?.attributes;
   const sgThumbCollect = {
-    thumbUrl: strapi_url + sgThumb?.url || "/noimg.jpg", 
-    thumbWidth: sgThumb?.width || "", 
-    thumbHeight: sgThumb?.height || "", 
-    thumbAlt: sgThumb?.alternativeText || "", 
+    thumbUrl:  sgThumb?.url,
+    thumbWidth: sgThumb?.width,
+    thumbHeight: sgThumb?.height,
+    thumbAlt: sgThumb?.alternativeText,
   };
   return (
     <div className="sg-temp01">
@@ -46,16 +46,19 @@ const BlogContent = ({ content }) => {
       <div className="inner">
         <div className="mct">
           <div className="block01">
-            <div className="thumb">
-              <Image
-                width={sgThumbCollect?.thumbWidth}
-                height={sgThumbCollect?.thumbHeight}
-                src={sgThumbCollect?.thumbUrl}
-                alt={sgThumbCollect?.thumbAlt}
-              />
-            </div>
+            {sgThumbCollect.thumbUrl && (
+              <div className="thumb">
+                <Image
+                  width={sgThumbCollect?.thumbWidth}
+                  height={sgThumbCollect?.thumbHeight}
+                  src={strapi_url + sgThumbCollect?.thumbUrl}
+                  alt={sgThumbCollect?.thumbAlt}
+                />
+              </div>
+            )}
+
             <div className="cms-content">
-              <BlocksRenderer content={sgCmsContent} />
+              {sgCmsContent && <BlocksRenderer content={sgCmsContent} />}
             </div>
           </div>
         </div>

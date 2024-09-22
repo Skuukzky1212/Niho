@@ -1,12 +1,11 @@
 import { Suspense } from "react";
 import BlogItem from "../component/BlogItem";
 import Breadcrumb from "../component/Breadcrumb";
-import "../assets/css/blog.scss";
 
 const BlogList = async () => {
   try {
     const response = await fetch(
-      `${process.env.API_STRAPI_URL}/api/infomations?fields[0]=title&fields[1]=createdAt&populate[0]=thumb&populate[1]=information_categories`
+      `${process.env.API_STRAPI_URL}/api/infomations?fields[0]=title&fields[1]=updatedAt&populate[0]=thumb&populate[1]=information_categories`
     );
 
     if (!response.ok) {
@@ -33,20 +32,13 @@ const BlogList = async () => {
   }
 };
 
-const Blog = () => {
+export default function Blog() {
   return (
     <>
-      <Breadcrumb
-        paths={[
-          { name: "Home", url: "/" },
-          { name: "Blog" },
-        ]}
-      />
+      <Breadcrumb paths={[{ name: "Home", url: "/" }, { name: "Blog" }]} />
       <Suspense fallback={<div>Loading...</div>}>
         <BlogList />
       </Suspense>
     </>
   );
-};
-
-export default Blog;
+}

@@ -1,5 +1,5 @@
-@import './util/media-queries.scss';
-@import './util/mixin.scss';
+@import "./util/media-queries.scss";
+@import "./util/mixin.scss";
 
 .breadcrumb {
   position: relative;
@@ -10,7 +10,7 @@
   overflow-x: auto;
   white-space: nowrap;
   max-width: 1366px;
-  margin: auto;
+  margin: auto auto 40px;
   // scrollbar-width: none; /* Firefox */
   // -ms-overflow-style: none; /* Internet Explorer 10+ */
   // &::-webkit-scrollbar {
@@ -56,6 +56,190 @@
       color: #3c3c3c;
       @include HOVER {
         text-decoration: unset;
+      }
+    }
+  }
+}
+
+.lst-cate {
+  padding-top: 40px;
+  .c-link01 {
+    margin-bottom: 20px;
+  }
+}
+.c-link01 {
+  position: relative;
+  @include font(15, "", 50, 500);
+  padding-left: 20px;
+
+  &.is-udl,
+  .is-udl {
+    text-decoration: underline;
+    @include add_prefix(transition, all 0.3s);
+
+    @include HOVER {
+      text-decoration: none;
+      transform: translateX(10px);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 6px;
+    left: 0;
+    margin: auto;
+    width: 14px;
+    height: 14px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.387 7.359"><g id="Group_176157" data-name="Group 176157" transform="translate(-259.647 -1020.631)"><g id="Group_176156" data-name="Group 176156"><g id="Group_176155" data-name="Group 176155"><path id="Path_95834" data-name="Path 95834" d="M-8155.537-15308.016l3.326,3.326-3.326,3.326" transform="translate(8415.537 16329)" fill="none" stroke="%233c3c3c" stroke-width="1"/></g></g></g></svg>')
+      center no-repeat;
+  }
+}
+
+.column-lst {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  margin: auto;
+  .item {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #a4beed;
+    margin-bottom: 46px;
+
+    @include PC {
+      @include flexbox;
+      @include flex-direction(column);
+      width: calc(352 / 1088 * 100%);
+
+      &:not(:nth-child(3n)) {
+        margin-right: calc(16 / 1088 * 100%);
+      }
+    }
+
+    @include SP {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
+    @include HOVER {
+      &::after {
+        @include add_prefix(transform, translateX(4px));
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: 21px;
+      right: 13px;
+      margin: auto;
+      width: 18px;
+      height: 18px;
+      @include add_prefix(transition, transform 0.3s);
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="8.847" height="9.009" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Group_176158" data-name="Group 176158" transform="translate(-460 -12074.001)"><g id="Group_41583" data-name="Group 41583" transform="translate(-3.847 12046.605)"><g id="Ellipse_840" data-name="Ellipse 840" transform="translate(463.847 27.396)" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="9" cy="9" r="9" stroke="none"/><circle cx="9" cy="9" r="8.5" fill="none"/></g><g id="Group_41318" data-name="Group 41318" transform="translate(468.423 31.892)"><g id="Group_41318-2" data-name="Group 41318" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="8.615" transform="translate(0 4.505)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353,17.3,4.742,12.911,9.131" transform="translate(-8.684 -0.238)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></g></g></svg>')
+        center/contain no-repeat;
+
+      @include SP {
+        width: 14px;
+        height: 14px;
+        bottom: 16px;
+        right: 15px;
+      }
+    }
+
+    &__photo {
+      @include PC {
+        order: 1;
+        margin-bottom: 14px;
+        @include aspect-ratio(352, 209);
+      }
+      @include SP {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        max-width: 152px;
+        width: calc(152 / 345 * 100%);
+        padding-bottom: 91px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      margin: 0 0 14px 15px;
+      padding-right: 34px;
+      @include PC {
+        order: 3;
+      }
+      @include SP {
+        position: relative;
+        @include flexbox;
+        @include align-items(flex-start);
+        @include justify-content(flex-start);
+        text-align: left;
+        flex-wrap: wrap;
+        max-width: calc(100% - 173px);
+        width: 100%;
+        min-height: 91px;
+        margin-left: auto;
+        margin: 20px 0 -5px auto;
+        padding: 27px 0 10px;
+        @include max-screen(374px) {
+          max-width: calc(100% - (173 / 345 * 100%));
+        }
+      }
+
+      &--date {
+        @include font(18, "", 25, 400);
+        color: $blue;
+        @include PC {
+          margin-right: 13px;
+        }
+        @include SP {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          @include font(16, "", 25, 400);
+        }
+      }
+
+      &--cate {
+        display: inline-block;
+        @include font(14, 24, 50, 500);
+        margin-right: 13px;
+        @include SP {
+          line-height: 1.4em;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    &__ttl {
+      @include font(18, 30, 50, 500);
+      @include multiLineEllipsis(2);
+      margin: 0 0 14px;
+      padding: 0 34px 0 15px;
+      @include PC {
+        order: 2;
+      }
+
+      @include SP {
+        @include font(16, 24, 50, 500);
+        padding: 0 32px 0 0;
+        margin: 0 0 17px;
+        text-align: left;
       }
     }
   }

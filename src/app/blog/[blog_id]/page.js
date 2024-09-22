@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   try {
     const response = await fetch(
-      `${process.env.API_STRAPI_URL}/api/infomations/?populate=*`
+      `${process.env.API_STRAPI_URL}/api/infomations/?fields[0]=id`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch data from API");
