@@ -1,9 +1,12 @@
-import { Inter } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import "./assets/css/util/mixin.scss";
 import "./assets/css/util/media-queries.scss";
 import "./assets/css/util/base.scss";
-import "./assets/css/component.scss";
-const inter = Inter({ subsets: ["latin"] });
+const notoSanJp = Noto_Sans_JP({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "My Nihon",
@@ -13,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={notoSanJp.className}>{children}</body>
     </html>
   );
 }

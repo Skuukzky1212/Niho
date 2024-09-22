@@ -21,7 +21,7 @@ export default function Home() {
           className={styles.card}
         >
           <h2>
-            Nihon Blog <span>-&gt;</span>
+            Nihon Blog <span>&gt;</span>
           </h2>
           <p>Find in-depth information about Nihon here!</p>
         </Link>

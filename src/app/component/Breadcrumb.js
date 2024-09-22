@@ -1,25 +1,19 @@
-"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-const Breadcrumb = () => {
-  const pathname = usePathname();
-  let pathname_arr = pathname?.split("/").filter((item) => item !== "");
-  const formatString = (str) => {
-    return str.replace(/-/g, " ").replace(/^\w/, (char) => char.toUpperCase());
-  };
+import { stripTags } from "../assets/js/utils";
+const Breadcrumb = ({ paths }) => {
   return (
     <ul className="breadcrumb">
-      <li>
-        <Link href={"/"}>Home</Link>
-      </li>
-      {pathname_arr &&
-        pathname_arr.map((item, index) => (
+      {paths && paths.length > 0 &&
+        paths.map((item, index) => (
           <li key={index}>
-            <Link href={`/${pathname_arr.slice(0, index + 1).join("/")}`}>
-              {formatString(item)}
-            </Link>
+            {index < paths.length - 1 ? (
+              <Link href={stripTags(item.url)}>{stripTags(item.name)}</Link>
+            ) : (
+              stripTags(item.name)
+            )}
           </li>
-        ))}
+        ))
+      }
     </ul>
   );
 };

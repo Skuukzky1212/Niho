@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import "./media-queries.scss";
 @import "./mixin.scss";
+@import "./cms.scss";
+@import "../component.scss";
 // global
 :root {
   --max-width: 1100px;
@@ -295,9 +297,6 @@ a:active {
   color: $color_link;
   text-decoration: none;
 }
-/*-----------------------------------------------------------
-FONT family
-------------------------------------------------------------*/
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -350,6 +349,8 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
 }
 
 #wrap {

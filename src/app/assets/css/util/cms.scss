@@ -1,0 +1,874 @@
+.cms-content {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  word-wrap: break-word;
+  @include clearfix;
+  ul {
+    &[style*="list-style-type: circle;"] {
+      li {
+        list-style-type: circle;
+      }
+    }
+    &[style*="list-style-type: square;"] {
+      li {
+        list-style-type: square;
+      }
+    }
+    li {
+      list-style: disc;
+    }
+  }
+  ol {
+    &[style*="list-style-type: lower-roman;"] {
+      li {
+        list-style-type: lower-roman;
+      }
+    }
+    &[style*="list-style-type: lower-alpha;"] {
+      li {
+        list-style-type: lower-alpha;
+      }
+    }
+    &[style*="list-style-type: lower-greek;"] {
+      li {
+        list-style-type: lower-greek;
+      }
+    }
+    &[style*="list-style-type: upper-alpha;"] {
+      li {
+        list-style-type: upper-alpha;
+      }
+    }
+    &[style*="list-style-type: upper-roman;"] {
+      li {
+        list-style-type: upper-roman;
+      }
+    }
+    li {
+      list-style-type: decimal;
+    }
+  }
+  > p, img {
+    margin-bottom: 30px;
+    @include SP {
+      margin-bottom: 26px;
+    }
+  }
+  iframe {
+    max-width: 100% !important;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+  }
+  table {
+    table-layout: fixed;
+    border: 1px solid $color_body;
+    margin-bottom: 40px;
+    td,
+    th {
+      border: 1px solid $color_body;
+    }
+  }
+}
+
+// single template 01
+.sg-temp01 {
+  #wrap {
+    position: relative;
+    overflow: unset;
+    margin-bottom: 132px;
+    @include SP {
+      margin-bottom: 100px;
+    }
+  }
+  .breadcrumb {
+    @include PC {
+      padding: 13px 21px 7px;
+    }
+    @include SP {
+      padding: 3px 11px 16px;
+    }
+  }
+  .sg-info {
+    background: #f0fcf6;
+    background: linear-gradient(45deg, #ebf4ff 0%, #f0fcf6 100%);
+    padding: 39px 0 89px 6px;
+    @include SP {
+      padding: 39px 0 66px 0;
+    }
+    &__ttl {
+      @include font(32, 48, 50, 700);
+      margin-bottom: 11px;
+      @include SP {
+        @include font(24, 36, 80, 700);
+      }
+    }
+    &__wrap {
+      @include flexbox;
+      @include PC {
+        @include flex-wrap(wrap);
+        @include align-content(center);
+      }
+      @include SP {
+        @include align-content(flex-start);
+        @include max-screen(374px) {
+          @include flex-wrap(wrap);
+        }
+      }
+    }
+    &__date {
+      @include font(16, "", 25, 400);
+      color: $blue;
+      margin: 10px 17px 10px 0;
+      @include PC {
+        align-self: center;
+      }
+      @include SP {
+        @include font(20);
+        white-space: nowrap;
+        margin: 10px 12px 10px 0;
+        align-self: flex-start;
+      }
+    }
+    &__cat {
+      display: flex;
+      align-items: center;
+      @include font(13, 22, 50, 500);
+      color: #fff;
+      background-color: $blue;
+      padding: 0 7px 2px;
+      margin: 6px 15px 10px 0;
+      @include PC {
+        align-self: center;
+      }
+      @include SP {
+        align-self: flex-start;
+        margin: 10px 15px 10px 0;
+      }
+    }
+    &__tag {
+      margin: 4px 0;
+      @include PC {
+        align-self: center;
+      }
+      @include SP {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        flex: 1;
+        align-self: flex-start;
+        margin: 8px 0;
+        @include max-screen(374px) {
+          flex: unset;
+        }
+      }
+      a {
+        @include font(13, "", 50, 500);
+        color: $lightblue;
+        margin-right: 5px;
+        @include SP {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .mct {
+    @include flexbox;
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    margin: 20px 0 0;
+    @include SP {
+      @include flex-direction(column);
+      margin: -45px 0 0;
+    }
+  }
+  .block01 {
+    @include PC {
+      flex: 1;
+    }
+    > .thumb {
+      text-align: center;
+      margin-bottom: 40px;
+      img {
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+    > .sentence {
+      @include font(16, 30, 50, 500);
+      margin: 43px 0 33px;
+      @include SP {
+        @include font(14, 28, 50, 500);
+        margin: 30px 0 24px;
+      }
+    }
+    .cms-content {
+      blockquote {
+        &:first-child {
+          border: 1px solid $lightblue;
+          border-radius: 20px;
+          padding: 30px 39px 26px;
+          margin-bottom: 63px;
+          @include SP {
+            padding: 23px 21px 26px;
+            margin-bottom: 48px;
+          }
+          p {
+            @include font(20, 30, 50, 500);
+            margin-bottom: 13px;
+            @include SP {
+              @include font(18, 30, 50, 500);
+              margin-bottom: 14px;
+            }
+          }
+          a {
+            color: #3c3c3c;
+          }
+          ul,
+          ol {
+            margin-bottom: 0;
+          }
+        }
+        &:not(:first-child) {
+          position: relative;
+          background-color: #f6f8fb;
+          border: 1px solid #cfd6e3;
+          @include font(16, 28, 50, 500);
+          padding: 18px 24px;
+          margin-bottom: 30px;
+          @include SP {
+            @include font(14, 26, 50, 500);
+            padding: 18px 21px 16px;
+            margin-bottom: 38px;
+          }
+          &::before {
+            position: absolute;
+            display: block;
+            content: "";
+            top: -19px;
+            left: 22px;
+            margin: auto;
+            width: 34px;
+            height: 30px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.365 28.362"><g id="Group_176160" data-name="Group 176160" transform="translate(-176.209 -2246.79)"><g id="Group_176159" data-name="Group 176159"><path id="Path_96066" data-name="Path 96066" d="M-2.784-72.21c-8.178,3.567-14.007,10.788-14.007,18.879a15.629,15.629,0,0,0,2,7.569,9.063,9.063,0,0,0,5.307,1.914,5.957,5.957,0,0,0,6-6c0-2.349-.783-4.35-3.741-6.612l-4.35-3.132c1.914-4.7,4.959-7.569,9.918-10.44ZM7.656-59.6c1.914-4.7,4.959-7.569,9.918-10.44L16.443-72.21C8.265-68.643,2.436-61.422,2.436-53.331a15.629,15.629,0,0,0,2,7.569,9.063,9.063,0,0,0,5.307,1.914,5.9,5.9,0,0,0,6-6c0-2.349-.783-4.35-3.654-6.612Z" transform="translate(193 2319)" fill="%23cbd8f0"/></g></g></svg>')
+              center no-repeat;
+          }
+        }
+      }
+      h2 {
+        position: relative;
+        @include font(22, 36, 50, 700);
+        border-bottom: 2px solid $lightblue;
+        padding-bottom: 13px;
+        margin-bottom: 39px;
+
+        color: $blue;
+        @include SP {
+          @include font(18, 28, 50, 700);
+          padding-right: 8px;
+          margin-bottom: 34px;
+        }
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          bottom: -2px;
+          left: 0;
+          margin: auto;
+          width: 19.2%;
+          height: 4px;
+          background: $blue;
+          @include SP {
+            width: 31.3%;
+          }
+        }
+      }
+      h3 {
+        @include font(17, 28, 50, 700);
+        border-bottom: 2px solid $lightblue;
+        background-color: #eaf6ff;
+        padding: 18px 23px 16px;
+        margin-bottom: 30px;
+        @include SP {
+          @include font(16, 26, 50, 700);
+          padding: 17px 22px 18px;
+          margin-bottom: 19px;
+        }
+      }
+      p {
+        @include font(16, 30, 50, 500);
+        @include SP {
+          @include font(14, 26, 50, 500);
+        }
+        + blockquote {
+          margin-top: 45px;
+          @include SP {
+            margin-top: 32px;
+          }
+        }
+        span[style*="text-decoration: underline;"] {
+          text-decoration: none !important;
+          background-image: linear-gradient(to right, #e1ff95, #e1ff95);
+          background-position: bottom 1px left;
+          background-repeat: no-repeat;
+          background-size: 100% 9px;
+          @include SP {
+            background-position: bottom -2px left;
+          }
+        }
+      }
+      a {
+        @include font(16, 30, 50, 500);
+        color: $blue;
+        text-decoration: underline;
+        @include SP {
+          @include font(14, 24, 50, 500);
+        }
+        @include HOVER {
+          text-decoration: none;
+        }
+        &[target*="_blank"] {
+          position: relative;
+          padding-right: 22px;
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            top: 8px;
+            right: 0;
+            width: 14px;
+            height: 14px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 13"><g id="Group_176158" data-name="Group 176158" transform="translate(-298 -2368)"><g id="Group_176157" data-name="Group 176157"><g id="Group_176156" data-name="Group 176156"><g id="Group_175085" data-name="Group 175085" transform="translate(-13 -65)"><g id="Rectangle_29211" data-name="Rectangle 29211" transform="translate(316 2437)" fill="%23fff" stroke="%231245ba" stroke-width="1"><rect width="9" height="9" stroke="none"/><rect x="0.5" y="0.5" width="8" height="8" fill="none"/></g><g id="Rectangle_29210" data-name="Rectangle 29210" transform="translate(311 2433)" fill="%23fff" stroke="%231245ba" stroke-width="1"><rect width="9" height="9" stroke="none"/><rect x="0.5" y="0.5" width="8" height="8" fill="none"/></g></g></g></g></g></svg>')
+              center no-repeat;
+            @include SP {
+              top: 4px;
+            }
+          }
+        }
+      }
+      iframe {
+        @include SP {
+          margin-bottom: -10px;
+        }
+      }
+      strong {
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        margin-bottom: 29px;
+        @include SP {
+          margin-bottom: 24px;
+        }
+        li {
+          position: relative;
+          @include font(16, 36, 50, 500);
+          padding-left: 18px;
+          list-style-type: none;
+          @include SP {
+            @include font(14, 24, 50, 500);
+            margin-bottom: 6px;
+          }
+          &::before {
+            position: absolute;
+            display: block;
+            content: "";
+            top: 17px;
+            left: 1px;
+            margin: auto;
+            width: 6px;
+            height: 6px;
+            background-color: $blue;
+            border-radius: 100%;
+            @include SP {
+              top: 10px;
+              left: 2px;
+            }
+          }
+        }
+      }
+      ol {
+        counter-reset: lst-counter;
+        @include PC {
+          margin-bottom: 34px;
+        }
+        li {
+          padding-left: 22px;
+          @include SP {
+            margin-bottom: 9px;
+          }
+          &::before {
+            counter-increment: lst-counter;
+            content: counter(lst-counter) ". ";
+            width: auto;
+            height: auto;
+            background: unset;
+            top: 0;
+            @include font(18, "", 50, 500);
+            color: $blue;
+            @include SP {
+              @include font(16);
+              left: 0;
+            }
+          }
+        }
+      }
+      .cms__linkcard {
+        margin-bottom: 36px;
+        @include SP {
+          margin-bottom: 23px;
+        }
+        a {
+          position: relative;
+          @include flexbox;
+          @include align-items(flex-start);
+          border: 1px solid $blue;
+          border-radius: 10px;
+          padding: 21px 38px 26px;
+          text-decoration: none;
+          color: unset;
+          overflow: hidden;
+          @include add_prefix(box-shadow, 0px 3px 3px rgba(0, 0, 0, 0.1));
+          @include SP {
+            @include flex-direction(column);
+            padding: 22px 32px 39px;
+          }
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: 17px;
+            right: 19px;
+            margin: auto;
+            width: 18px;
+            height: 18px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 18 18"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="8.847" height="9.009" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Group_176163" data-name="Group 176163" transform="translate(-463.847 -27.396)"><g id="Group_176162" data-name="Group 176162"><g id="Group_176161" data-name="Group 176161"><g id="Group_176160" data-name="Group 176160"><g id="Group_176159" data-name="Group 176159"><g id="Ellipse_840" data-name="Ellipse 840" transform="translate(463.847 27.396)" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="9" cy="9" r="9" stroke="none"/><circle cx="9" cy="9" r="8.5" fill="none"/></g><g id="Group_41318" data-name="Group 41318" transform="translate(468.423 31.892)"><g id="Group_41318-2" data-name="Group 41318" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="8.615" transform="translate(0 4.505)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353,17.3,4.742,12.911,9.131" transform="translate(-8.684 -0.238)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></g></g></g></g></g></svg>')
+              center no-repeat;
+            @include SP {
+              bottom: 15px;
+              right: 12px;
+            }
+          }
+        }
+        .thumb {
+          @include PC {
+            width: 39.7%;
+            margin-right: 5.5%;
+          }
+          @include SP {
+            width: 100%;
+          }
+          text-align: center;
+          img {
+            width: 100%;
+          }
+        }
+        .text {
+          flex: 1;
+          margin-top: 11px;
+          @include SP {
+            margin-top: 15px;
+          }
+          &__title {
+            @include font(18, 28, 50, 500);
+            margin-bottom: 2px;
+          }
+          &__wrap {
+            @include flexbox;
+            @include flex-wrap(wrap);
+            @include align-items(center);
+            margin-bottom: 7px;
+            @include SP {
+              margin-bottom: 7px;
+            }
+          }
+          &__date {
+            display: block;
+            @include font(14, "", 25, 400);
+
+            color: $blue;
+            margin-right: 10px;
+            margin-top: 1px;
+            @include SP {
+              margin-top: 4px;
+            }
+          }
+          &__cate {
+            display: block;
+            @include font(12, "", 50, 500);
+          }
+          &__desc {
+            @include font(14, 22, 50, 500);
+            color: #939393;
+            @include multiLineEllipsis(2);
+          }
+        }
+      }
+    }
+  }
+  .block02 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 105px;
+    right: 0;
+    width: 100%;
+    z-index: 333;
+    margin: 97px 0 20px;
+    @include PC {
+      max-height: 80vh;
+      max-width: 225px;
+      overflow: auto;
+    }
+    @include SP {
+      max-width: 301px;
+      margin: 63px auto 20px;
+    }
+    .c__about-block {
+      width: 100%;
+      @include flex-direction(column);
+      margin-bottom: 12px;
+      @include PC {
+        border-bottom: 1px solid $lightblue;
+        padding-bottom: 20px;
+      }
+      @include SP {
+        margin-bottom: 24px;
+      }
+      .item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: none;
+        @include SP {
+          margin-bottom: 15px;
+        }
+        &::after {
+          width: 14px;
+          height: 14px;
+          right: 8px;
+          @include SP {
+            right: 10px;
+          }
+        }
+        &__photo {
+          width: 33.7%;
+          @include SP {
+            width: 28.2%;
+          }
+        }
+        &__txt {
+          padding: 13px 23px 8px 18px;
+          @include SP {
+            padding: 13px 23px 10px 21px;
+          }
+        }
+        &__txt--en {
+          display: none;
+        }
+        &__txt--jp1 {
+          margin-left: -6px !important;
+          @include font(18);
+          small {
+            display: none;
+          }
+        }
+        &__txt--jp2 {
+          @include font(13);
+          display: none;
+          &.sidebar-text {
+            display: block;
+            margin: 6px 0 0 -3px;
+            @include SP {
+              margin: 1px 0 0 -3px;
+            }
+          }
+        }
+      }
+    }
+    .filter {
+      &__item {
+        margin-bottom: 12px;
+        @include PC {
+          border-bottom: 1px solid $lightblue;
+          padding-bottom: 26px;
+        }
+        @include SP {
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid $blue;
+        }
+      }
+      &__label {
+        @include SP {
+          position: relative;
+          @include flexbox;
+          @include align-items(center);
+          padding: 11px 30px 11px 12px;
+          &.show {
+            &::after {
+              @include add_prefix(transform, scaleY(-1));
+            }
+          }
+          &::before,
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 28px;
+            height: 100%;
+          }
+          &::before {
+            background-color: $blue;
+          }
+          &::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.639 6.734"><g id="Group_175860" data-name="Group 175860" transform="translate(10.054 -2.735) rotate(90)"><g id="Group_175859" data-name="Group 175859"><g id="Group_175858" data-name="Group 175858"><g id="Group_175857" data-name="Group 175857" transform="translate(1 1)"><g id="Group_175856" data-name="Group 175856"><g id="Group_175855" data-name="Group 175855"><g id="Group_175854" data-name="Group 175854" transform="translate(-2 -1)"><path id="Path_94843" data-name="Path 94843" d="M0,0,4.612,4.612,0,9.225" transform="translate(4.442 0.122)" fill="none" stroke="%23fff" stroke-miterlimit="10" stroke-width="2"/></g></g></g></g></g></g></g></svg>');
+            background-size: 8px 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            @include add_prefix(transition, all 0.3s);
+          }
+          + .js-accordion-content {
+            @include SP {
+              border-top: 1px solid $blue;
+            }
+          }
+        }
+        &--en {
+          display: block;
+          @include font(22, "", 25, 400);
+
+          color: $blue;
+          @include SP {
+            @include font(18, "", 50, 400);
+            margin-right: 11px;
+          }
+        }
+        &--jp {
+          display: block;
+          @include font(10, "", 50, 500);
+          color: #91b4f5;
+          @include PC {
+            margin-top: -5px;
+          }
+        }
+      }
+      &__cate {
+        @include PC {
+          margin: 10px 0 0;
+        }
+        > li {
+          @include SP {
+            &:not(:last-child) {
+              border-bottom: 1px solid $blue;
+            }
+          }
+          > a {
+            position: relative;
+            display: block;
+            @include font(14, 28, 50, 500);
+            padding-left: 22px;
+            color: #3c3c3c;
+            @include SP {
+              padding: 10px 15px;
+            }
+            @include HOVER {
+              &::before {
+                @include add_prefix(transform, translateX(4px));
+              }
+            }
+            &::before {
+              position: absolute;
+              display: block;
+              content: "";
+              margin: auto;
+              top: 10px;
+              left: 3px;
+              width: 12px;
+              height: 12px;
+              @include add_prefix(transition, transform 0.3s);
+              background: url('data:image/svg+xml,<svg id="Group_176155" data-name="Group 176155" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="5.898" height="6.006" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Ellipse_840" data-name="Ellipse 840" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="6" cy="6" r="6" stroke="none"/><circle cx="6" cy="6" r="5.5" fill="none"/></g><g id="Group_41318" data-name="Group 41318" transform="translate(3.051 2.998)"><g id="Group_41318-2" data-name="Group 41318" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="5.743" transform="translate(0 3.003)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353l2.926,2.926L12.911,6.205" transform="translate(-10.093 -0.276)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></svg>')
+                center no-repeat;
+              @include SP {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &__tags {
+        @include flexbox;
+        @include align-items(center);
+        @include flex-wrap(wrap);
+        @include PC {
+          margin: 11px 0 -3px;
+        }
+        @include SP {
+          @include flex-direction(column);
+        }
+        > li {
+          @include SP {
+            width: 100%;
+            &:not(:last-child) {
+              border-bottom: 1px solid $blue;
+            }
+          }
+          > a {
+            @include add_prefix(transition, all 0.3s);
+            @include PC {
+              @include flexbox;
+              @include font(11, 22, 50, 500);
+              align-items: center;
+              color: #81724f;
+              padding: 0 11px;
+              margin-right: 5px;
+              margin-bottom: 7px;
+              border: 1px solid #b9b4a0;
+              border-radius: 60px;
+              background-color: #f5f4ef;
+            }
+            @include SP {
+              display: block;
+              @include font(14, 28, 50, 500);
+              color: #3c3c3c;
+              padding: 10px 15px;
+            }
+            @include HOVER {
+              color: #eae4ca;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &__date {
+        @include PC {
+          margin: 9px 0 -4px;
+        }
+        > li {
+          position: relative;
+          @include font(14, 28, 50, 500);
+          @include PC {
+            padding-left: 18px;
+          }
+          @include SP {
+            &:not(:last-child) {
+              border-bottom: 1px solid $blue;
+            }
+            &:nth-child(-n + 1) {
+              border-color: #3ea0b7;
+            }
+          }
+          > a {
+            position: relative;
+            @include SP {
+              display: block;
+              width: 100%;
+              padding: 10px 20px 10px 15px;
+            }
+            &.show {
+              &::before {
+                @include PC {
+                  @include add_prefix(transform, rotate(0));
+                }
+                @include SP {
+                  @include add_prefix(transform, scaleY(-1));
+                }
+              }
+            }
+            &::before {
+              position: absolute;
+              display: block;
+              content: "";
+              top: -2px;
+              bottom: 0;
+              right: 10px;
+              margin: auto;
+              width: 8px;
+              height: 6px;
+              background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 8.707 5.061"><g id="Group_175855" data-name="Group 175855" transform="translate(-281.646 -21.645)"><g id="Group_175854" data-name="Group 175854"><g id="Group_41464" data-name="Group 41464" transform="translate(290.469 20.089) rotate(90)"><path id="Path_95915" data-name="Path 95915" d="M1042.763-18720.912l4,4,4-4" transform="translate(18722.822 1051.231) rotate(-90)" fill="none" stroke="%231245ba" stroke-width="1"/></g></g></g></svg>')
+                center no-repeat;
+              @include add_prefix(transition, all 0.3s);
+              @include PC {
+                top: 2px;
+                bottom: 0;
+                left: -16px;
+                right: unset;
+                @include add_prefix(transform, rotate(-90deg));
+              }
+            }
+          }
+          .sub {
+            @include PC {
+              margin-top: 1px;
+            }
+            @include SP {
+              border-top: 1px solid $blue;
+            }
+            > li {
+              &:last-child {
+                @include SP {
+                  a {
+                    &::after {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              > a {
+                position: relative;
+                display: block;
+                @include font(13, 22, 50, 500);
+                padding-left: 14px;
+                @include SP {
+                  @include font(14, 31, 50, 500);
+                  padding: 8px 20px 11px 36px;
+                }
+                &::before {
+                  position: absolute;
+                  display: block;
+                  content: "";
+                  top: 11px;
+                  left: 0;
+                  margin: auto;
+                  width: 5px;
+                  height: 1px;
+                  background-color: #1245ba;
+                  @include SP {
+                    top: -2px;
+                    bottom: 0;
+                    left: 16px;
+                    width: 12px;
+                    height: 12px;
+                    background: url('data:image/svg+xml,<svg id="Group_175862" data-name="Group 175862" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 12 12"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="5.898" height="6.006" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Group_175861" data-name="Group 175861"><g id="Group_175860" data-name="Group 175860"><g id="Group_175857" data-name="Group 175857"><g id="Group_175856" data-name="Group 175856"><g id="Ellipse_840" data-name="Ellipse 840" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="6" cy="6" r="6" stroke="none"/><circle cx="6" cy="6" r="5.5" fill="none"/></g></g></g><g id="Group_41318" data-name="Group 41318" transform="translate(3.051 2.997)" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="5.743" transform="translate(0 3.003)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353l2.926,2.926L12.911,6.205" transform="translate(-10.093 -0.276)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></g></svg>')
+                      center no-repeat;
+                  }
+                }
+                @include SP {
+                  &::after {
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 6 1"><defs><clipPath id="clip-path"><rect x="3" width="6" height="1" fill="none"/></clipPath></defs><g id="Group_175865" data-name="Group 175865" transform="translate(-3 -49.5)"><g id="Group_175864" data-name="Group 175864"><g id="Group_175863" data-name="Group 175863"><g id="Scroll_Group_1" data-name="Scroll Group 1" transform="translate(0 49.5)" clip-path="url(%23clip-path)" style="isolation: isolate"><path id="Path_95975" data-name="Path 95975" d="M4372-16184.687h301" transform="translate(-4372 16185.187)" fill="none" stroke="%233ea0b7" stroke-width="1" stroke-dasharray="1 2"/></g></g></g></g></svg>');
+                    background-position: left;
+                    background-repeat: repeat-x;
+                    background-size: contain;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
