@@ -136,7 +136,7 @@
       bottom: 21px;
       right: 13px;
       margin: auto;
-      width: 18px;
+      width: 17px;
       height: 18px;
       @include add_prefix(transition, transform 0.3s);
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="8.847" height="9.009" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Group_176158" data-name="Group 176158" transform="translate(-460 -12074.001)"><g id="Group_41583" data-name="Group 41583" transform="translate(-3.847 12046.605)"><g id="Ellipse_840" data-name="Ellipse 840" transform="translate(463.847 27.396)" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="9" cy="9" r="9" stroke="none"/><circle cx="9" cy="9" r="8.5" fill="none"/></g><g id="Group_41318" data-name="Group 41318" transform="translate(468.423 31.892)"><g id="Group_41318-2" data-name="Group 41318" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="8.615" transform="translate(0 4.505)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353,17.3,4.742,12.911,9.131" transform="translate(-8.684 -0.238)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></g></g></svg>')
@@ -242,5 +242,59 @@
         text-align: left;
       }
     }
+  }
+}
+
+.pagination__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__buttons {
+  position: relative;
+  margin: 20px 40px;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 17px;
+    height: 18px;
+    @include add_prefix(transition, transform 0.3s);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18"><defs><clipPath id="clip-path"><rect id="Rectangle_22366" data-name="Rectangle 22366" width="8.847" height="9.009" fill="none" stroke="%231245ba" stroke-width="1"/></clipPath></defs><g id="Group_176158" data-name="Group 176158" transform="translate(-460 -12074.001)"><g id="Group_41583" data-name="Group 41583" transform="translate(-3.847 12046.605)"><g id="Ellipse_840" data-name="Ellipse 840" transform="translate(463.847 27.396)" fill="none" stroke="%231245ba" stroke-width="1"><circle cx="9" cy="9" r="9" stroke="none"/><circle cx="9" cy="9" r="8.5" fill="none"/></g><g id="Group_41318" data-name="Group 41318" transform="translate(468.423 31.892)"><g id="Group_41318-2" data-name="Group 41318" clip-path="url(%23clip-path)"><line id="Line_301" data-name="Line 301" x2="8.615" transform="translate(0 4.505)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/><path id="Path_94845" data-name="Path 94845" d="M12.911.353,17.3,4.742,12.911,9.131" transform="translate(-8.684 -0.238)" fill="none" stroke="%231245ba" stroke-miterlimit="10" stroke-width="1"/></g></g></g></g></svg>')
+      center/contain no-repeat;
+  }
+  &.prev {
+    padding-left: 30px;
+    &:before {
+      transform: scale(-1);
+      left: 0;
+    }
+    @include HOVER {
+      &:before {
+        transform: translateX(-4px) scale(-1);
+        -webkit-transform: translateX(-4px) scale(-1);
+        -moz-transform: translateX(-4px) scale(-1);
+        -ms-transform: translateX(-4px) scale(-1);
+        -o-transform: translateX(-4px) scale(-1);
+      }
+    }
+  }
+  &.next {
+    padding-right: 30px;
+    &:before {
+      right: 0;
+    }
+    @include HOVER {
+      &:before {
+        @include add_prefix(transform, translateX(4px));
+      }
+    }
+  }
+  &.disable {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }
