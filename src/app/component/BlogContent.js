@@ -51,7 +51,7 @@ const BlogContent = ({ content }) => {
                 <Image
                   width={sgThumbCollect?.thumbWidth}
                   height={sgThumbCollect?.thumbHeight}
-                  src={strapi_url + sgThumbCollect?.thumbUrl}
+                  src={sgThumbCollect?.thumbUrl}
                   alt={sgThumbCollect?.thumbAlt}
                 />
               </div>

@@ -6,7 +6,7 @@ const BlogItem = ({ data }) => {
   const title = data?.attributes?.title || "";
   const term = data?.attributes?.information_categories?.data || [];
   const thumb = data?.attributes?.thumb?.data?.attributes?.url;
-  const thumb_url = thumb ? strapi_url + thumb : "/noimg.jpg";
+  const thumb_url = thumb ? thumb : "/noimg.jpg";
   const timestamp = data?.attributes?.updatedAt || "";
   return (
     <Link className="item" href={`/blog/${data?.id}`}>
